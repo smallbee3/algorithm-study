@@ -8,19 +8,19 @@ def quick_sort(arr):
     # elif len(arr) == 2:
     #     arr.sort()
     #     return arr
-    else:
-        pivot = random.randrange(len(arr))
-        a = []
-        b = []
-        for i in range(len(arr)):
-            if arr[i] < arr[pivot]:
-                a.append(arr[i])
-            elif i == pivot:
-                pass
-            else:
-                b.append(arr[i])
 
-        return quick_sort(a) + [arr[pivot]] + quick_sort(b)
+    pivot = random.randrange(len(arr))
+    a = []
+    b = []
+    for i in range(len(arr)):
+        if arr[i] < arr[pivot]:
+            a.append(arr[i])
+        elif i == pivot:
+            pass
+        else:
+            b.append(arr[i])
+
+    return quick_sort(a) + [arr[pivot]] + quick_sort(b)
 
 
 print(quick_sort([33, 10, 15, 7]))
