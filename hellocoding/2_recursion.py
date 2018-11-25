@@ -70,3 +70,33 @@ def fact_array4(array, index=0):
 
 
 print(fact_array4([1, 2, 3, 4, -1, 100]))
+
+
+# 181125
+# Sum of array just like an answer of the book
+def sum_arr(arr):
+
+    if len(arr) == 1:
+        return arr[0]
+    return arr[0] + sum_arr(arr[1:])
+
+
+print(sum_arr([1,2,3,3, -1]))
+
+
+# 181125
+# factorial for both positive and negative number
+def factorial(num):
+    if num > 0:
+        if num == 1:
+            return num
+        else:
+            return num * factorial(num - 1)
+    else:
+        if num == -1:
+            return num
+        else:
+            return num * factorial(num+1) if num < 0 else factorial(-(num-1))
+
+
+print(factorial(-4))
