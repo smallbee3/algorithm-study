@@ -1,4 +1,4 @@
-
+from collections import deque
 import queue
 
 graph = dict()
@@ -10,6 +10,44 @@ graph['anuj'] = []
 graph['peggy'] = []
 graph['thom'] = []
 graph['jonny'] = []
+
+
+# 181126 Simple answer
+
+def breadth_first_algorithm(name):
+
+    q = deque()
+    # q.extend(graph['you'])
+    q += graph[name]
+    searched_list = []
+
+    while q:
+        person = q.popleft()
+        if person == 'jonny':
+            return f'"{person}" is mango seller!'
+        searched_list.append(person)
+
+        print(person)
+        print(graph[person])
+        print(q)
+        print(searched_list)
+
+        # q.extend(graph[person])
+        for i in graph[person]:
+            if i not in q and i not in searched_list:
+                q.append(i)
+                print(i)
+                # searched_list.append(i)  -> no need
+        print()
+
+    print('There is no mango seller!')
+
+
+print(breadth_first_algorithm('you'))
+
+
+
+
 
 
 # (1) q 중복 제거 전
@@ -83,7 +121,6 @@ graph['jonny'] = []
 # func('you')
 
 
-from collections import deque
 
 
 # # Book answer (1)

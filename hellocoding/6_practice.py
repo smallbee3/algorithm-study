@@ -13,6 +13,50 @@ graph['BAR'] = ['BAT']
 graph['BAT'] = []
 
 
+# 181126 Result after 1 hour of solving
+
+def breadth_first_algorithm(name):
+
+    q = deque()
+
+    # q += graph[name]
+    ########################
+    path = {}
+    for i in graph[name]:
+        path[i] = [name, i]
+        q.append(i)
+    ########################
+
+    searched_list = []
+
+    while q:
+        person = q.popleft()
+
+        if person == 'BAT':
+            print(path[person])
+            return f'"{person}" is mango seller!'
+        searched_list.append(person)
+
+        print(person)
+        print(graph[person])
+        print(q)
+
+        for i in graph[person]:
+            if i not in q and i not in searched_list:
+                q.append(i)
+                print(i)
+                ############################
+                path[i] = path[person] + [i]
+                ############################
+        print()
+
+    print('There is no mango seller!')
+
+
+print(breadth_first_algorithm('CAB'))
+
+
+
 # (1) 최단경로까지 도달하지만 해당 경로는 출력하지 않음.
 
 # def search(name):
@@ -61,8 +105,8 @@ def search2(name):
         if node not in searched:
             if node == 'BAT':
                 print('도착 최단 경로')
-                print(f'경로 :')
-                [print(f'{i}') for i in node_list]
+                print(f'경로 :', end=' ')
+                [print(f'{i}', end=' ') for i in node_list]
                 return True
             else:
                 # q += graph[node]

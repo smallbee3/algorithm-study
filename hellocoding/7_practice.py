@@ -1,51 +1,51 @@
 
-# # 1. A
-# # (1) Graph
-# graph = {}
-# # node start
-# graph['start'] = {}
-# graph['start']['a'] = 5
-# graph['start']['b'] = 2
-# # node a
-# graph['a'] = {}
-# graph['a']['c'] = 4
-# graph['a']['d'] = 2
-# # node b
-# graph['b'] = {}
-# graph['b']['d'] = 7
-# # node c
-# graph['c'] = {}
-# graph['c']['d'] = 6
-# graph['c']['final'] = 3
-# # node d
-# graph['d'] = {}
-# graph['d']['final'] = 1
-# # node final
-# graph['final'] = {}
-#
-# # (2) Cost
-# infinity = float('inf')
-# costs = {}
-# costs['a'] = 5
-# costs['b'] = 2
-# costs['c'] = infinity
-# costs['d'] = infinity
-# costs['final'] = infinity
-#
-# # (3) Parents
-# parents = {}
-# parents['a'] = 'start'
-# parents['b'] = 'start'
-# parents['c'] = None
-# parents['b'] = None
-# parents['fin'] = None
-#
-# # (4) Processed
-# processed = []
+# 1. A
+# (1) Graph
+graph = {}
+# node start
+graph['start'] = {}
+graph['start']['a'] = 5
+graph['start']['b'] = 2
+# node a
+graph['a'] = {}
+graph['a']['c'] = 4
+graph['a']['d'] = 2
+# node b
+graph['b'] = {}
+graph['b']['d'] = 7
+# node c
+graph['c'] = {}
+graph['c']['d'] = 6
+graph['c']['final'] = 3
+# node d
+graph['d'] = {}
+graph['d']['final'] = 1
+# node final
+graph['final'] = {}
+
+# (2) Cost
+infinity = float('inf')
+costs = {}
+costs['a'] = 5
+costs['b'] = 2
+costs['c'] = infinity
+costs['d'] = infinity
+costs['final'] = infinity
+
+# (3) Parents
+parents = {}
+parents['a'] = 'start'
+parents['b'] = 'start'
+parents['c'] = None
+parents['b'] = None
+parents['fin'] = None
+
+# (4) Processed
+processed = []
 
 
-# # 2. B
-# # (1) Graph
+# 2. B
+# (1) Graph
 # graph = {}
 # # node start
 # graph['start'] = {}
@@ -85,43 +85,43 @@
 
 # 3. C
 # (1) Graph
-graph = {}
-# node start
-graph['start'] = {}
-graph['start']['a'] = 2
-graph['start']['b'] = 2
-# node a
-graph['a'] = {}
-graph['a']['b'] = 2
-# node b
-graph['b'] = {}
-graph['b']['c'] = 2
-graph['b']['final'] = 2
-# node c
-graph['c'] = {}
-graph['c']['a'] = -1
-graph['c']['final'] = 2
-# node final
-graph['final'] = {}
-
-# (2) Cost
-infinity = float('inf')
-costs = {}
-costs['a'] = 2
-costs['b'] = 2
-costs['c'] = infinity
-costs['d'] = infinity
-costs['final'] = infinity
-
-# (3) Parents
-parents = {}
-parents['a'] = 'start'
-parents['b'] = 'start'
-parents['c'] = None
-parents['fin'] = None
-
-# (4) Processed
-processed = []
+# graph = {}
+# # node start
+# graph['start'] = {}
+# graph['start']['a'] = 2
+# graph['start']['b'] = 2
+# # node a
+# graph['a'] = {}
+# graph['a']['b'] = 2
+# # node b
+# graph['b'] = {}
+# graph['b']['c'] = 2
+# graph['b']['final'] = 2
+# # node c
+# graph['c'] = {}
+# graph['c']['a'] = -1
+# graph['c']['final'] = 2
+# # node final
+# graph['final'] = {}
+#
+# # (2) Cost
+# infinity = float('inf')
+# costs = {}
+# costs['a'] = 2
+# costs['b'] = 2
+# costs['c'] = infinity
+# costs['d'] = infinity
+# costs['final'] = infinity
+#
+# # (3) Parents
+# parents = {}
+# parents['a'] = 'start'
+# parents['b'] = 'start'
+# parents['c'] = None
+# parents['fin'] = None
+#
+# # (4) Processed
+# processed = []
 
 
 def update_costs_and_parents(node):
