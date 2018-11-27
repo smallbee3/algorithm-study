@@ -34,56 +34,6 @@ parents['fin'] = None
 processed = []
 
 
-# 181126 Result after 1 hour of solving
-# Till now this is my simplest code ever
-
-def find_the_cheepest_node(costs):
-    min_distance = float('inf')
-    min_node = None
-    # for i in graph.keys():
-    for i in costs:
-        if i in processed:
-            continue
-        if costs[i] < min_distance:
-            min_distance = costs[i]
-            min_node = i
-    return min_node
-
-
-def update_neighbors_costs_and_parents(node):
-    # print(graph[node])
-    neighbors = graph[node]
-    for i in neighbors:
-        print(i)
-        if costs[i] > costs[node] + graph[node][i]:
-            costs[i] = costs[node] + graph[node][i]
-            parents[i] = node
-            # print(costs[i])
-
-
-def dijkstras(str, fin):
-    final = fin
-    node = str
-    processed.append(node)
-
-    while len(processed) < len(list(graph.keys())):
-        closest_node = find_the_cheepest_node(costs)
-        update_neighbors_costs_and_parents(closest_node)
-        processed.append(closest_node)
-
-    print(f'costs: {costs[final]}')
-    path = []
-    while True:
-        path.insert(0, final)
-        if not parents.get(final):
-            break
-        final = parents[final]
-    print(f'paths: {path}')
-
-
-dijkstras('start', 'final')
-
-
 # 책 내용을 잘못이해하고 가장 가격이 싼 노드가 아니라
 # 가장 최근 선택한 노드에서 가장 가중치가 작은
 # node를 고르는 것으로 착각하고 만든 불필요한 코드
@@ -152,3 +102,53 @@ def dijkstra(str, fin):
 
 
 dijkstra('start', 'final')
+
+
+# 181126 Result after 1 hour of coding
+# Till now this is my simplest code ever
+
+def find_the_cheepest_node(costs):
+    min_distance = float('inf')
+    min_node = None
+    # for i in graph.keys():
+    for i in costs:
+        if i in processed:
+            continue
+        if costs[i] < min_distance:
+            min_distance = costs[i]
+            min_node = i
+    return min_node
+
+
+def update_neighbors_costs_and_parents(node):
+    # print(graph[node])
+    neighbors = graph[node]
+    for i in neighbors:
+        print(i)
+        if costs[i] > costs[node] + graph[node][i]:
+            costs[i] = costs[node] + graph[node][i]
+            parents[i] = node
+            # print(costs[i])
+
+
+def dijkstras(str, fin):
+    final = fin
+    node = str
+    processed.append(node)
+
+    while len(processed) < len(list(graph.keys())):
+        closest_node = find_the_cheepest_node(costs)
+        update_neighbors_costs_and_parents(closest_node)
+        processed.append(closest_node)
+
+    print(f'costs: {costs[final]}')
+    path = []
+    while True:
+        path.insert(0, final)
+        if not parents.get(final):
+            break
+        final = parents[final]
+    print(f'paths: {path}')
+
+
+dijkstras('start', 'final')

@@ -5,10 +5,11 @@ import time
 
 def quick_sort(arr):
 
-    if arr == []:
-        return []
-
-    elif len(arr) == 1:
+    # if arr == []:
+    #     return []
+    # elif len(arr) == 1:
+    #     return arr
+    if len(arr) < 2:
         return arr
 
     pivot = arr[random.randrange(len(arr))]
