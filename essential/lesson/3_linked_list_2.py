@@ -23,14 +23,14 @@ def init_list():
 
 
 def print_list():
-
-    # global node_A
+    global node_A
 
     node = node_A
     while node:
-        print(node.data)
+        print(node.data, end=' -> ' if node.next is not None else '')
         node = node.next
     print()
+
 
 
 # def insert_list(obj):
@@ -156,3 +156,47 @@ if __name__ == '__main__':
     # delete_list('B')
     # delete_list('A')
     print_list()
+
+
+# The code above failed to pass the stress test below
+
+# if __name__ == '__main__':
+#
+#     # initialize
+#     init_list()
+#     print_list()
+#
+#     # insert node
+#     insert_list('1')
+#     print_list()
+#
+#     insert_list('AB')
+#     print_list()
+#
+#     insert_list('CD')
+#     print_list()
+#
+#     insert_list('E')
+#     print_list()
+#
+#     insert_list('E')
+#     print_list()
+#
+#     # delete node
+#     delete_list('C')
+#     print_list()
+#
+#     delete_list('E')
+#     print_list()
+#
+#     delete_list('E')
+#     print_list()
+#
+#     delete_list('E')
+#     print_list()
+#
+#     delete_list('1')
+#     print_list()
+#
+#     delete_list('A')
+#     print_list()
