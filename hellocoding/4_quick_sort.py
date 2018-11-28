@@ -3,6 +3,9 @@ import random
 import time
 
 
+# comment (2018.11.28)
+# The first quick sort has a problem of not sorting the duplicate elements.
+
 def quick_sort(arr):
 
     # if arr == []:
@@ -32,7 +35,7 @@ def quick_sort(arr):
 t1 = time.time()
 print(quick_sort([33, 10, 15, 7, 3, 53, 13, 5, 12, 76, 1, 6, 8, 66, 83, 24, 13]))
 # print(quick_sort([3, 5, 2, 1, 4]))
-time.sleep(1)
+# time.sleep(1)
 t2 = time.time() - t1
 print(t2)
 
@@ -45,19 +48,14 @@ def quick_sort(arr):
         arr.sort()
         return arr
 
-    # elif len(arr) == 2:
-    #     if arr[0] > arr[1]:
-    #         return [arr[0], arr[1]]
-    #     return arr
-
     pivot = random.randrange(len(arr))
     a = []
     b = []
     for i in range(len(arr)):
-        if arr[i] < arr[pivot]:
-            a.append(arr[i])
-        elif i == pivot:
+        if i == pivot:
             pass
+        elif arr[i] < arr[pivot]:
+            a.append(arr[i])
         else:
             b.append(arr[i])
 
@@ -66,7 +64,7 @@ def quick_sort(arr):
 
 t1 = time.time()
 print(quick_sort([33, 10, 15, 7, 3, 53, 13, 5, 12, 76, 1, 6, 8, 66, 83, 24, 13]))
-time.sleep(1)
+# time.sleep(1)
 t2 = time.time() - t1
 print(t2)
 
