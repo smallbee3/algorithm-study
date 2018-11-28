@@ -37,20 +37,59 @@ def insertion_sort(arr):
     return sorted_list
 
 
+# 2018.11.28
+# The code above is sorting after insertion
+# and the code below insert the minimum value, so there isn't sorting.
+
+def find_the_min(arr):
+    min_value = float('inf')
+    min_idx = None
+    for i in range(len(arr)):
+        if arr[i] < min_value:
+            min_value = arr[i]
+            min_idx = i
+    return min_idx
+
+
+def insertion_sort2(arr):
+
+    sorted_arr = []
+    arr_length = len(arr)
+    for i in range(arr_length):
+        min_idx = find_the_min(arr)
+        sorted_arr.append(arr[min_idx])
+        del arr[min_idx]
+    arr = sorted_arr
+    print(arr)
+
+
+# 2018.11.28
+# Example of why 'random_list' has not been changed.
+
+def test_num(num):
+    print(num)
+    num = 3
+    print(num)
+
+j = 1
+test_num(j)
+print(j)
+
+
 if __name__ == '__main__':
 
-    random_list =[]
+    random_list = []
 
-    # random_data_size = 100
-    # for i in range(random_data_size):
-    #     result = random.randint(1, 100)
-    #     random_list.append(result)
-
-    input_str = input('정렬할 데이터의 수 : ')
-    input_num = int(input_str)
-    for i in range(input_num):
-        result = random.randint(1, input_num)
+    random_data_size = 100
+    for i in range(random_data_size):
+        result = random.randint(1, 100)
         random_list.append(result)
+
+    # input_str = input('정렬할 데이터의 수 : ')
+    # input_num = int(input_str)
+    # for i in range(input_num):
+    #     result = random.randint(1, input_num)
+    #     random_list.append(result)
 
     print(random_list)
 

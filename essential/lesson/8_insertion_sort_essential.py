@@ -3,7 +3,7 @@ import time
 
 
 # 1) 책 답안
-# def insertion_sort(my_list):
+# def selection_sort(my_list):
 #
 #     my_list.insert(0, -1)
 #     for i in range(2, len(my_list)):
@@ -26,24 +26,24 @@ def insertion_sort(my_list):
 
     for i in range(1, len(my_list)):
         temp = my_list[i]
-        i2 = i
+        # i2 = i
 
-        while my_list[i2 - 1] > temp:
-            my_list[i2] = my_list[i2 - 1]
-            i2 = i2 - 1
+        while my_list[i - 1] > temp:
+            my_list[i] = my_list[i - 1]
+            i -= 1
 
             # my_list.insert(0, -1) 없어도 작동하도록 설계
-            if i2 == 0:
+            if i == 0:
                 # my_list[0]에 위치한 element보다도 작으면
                 # 그 밑으로 내려갈 필요 없이(my_list[-1])
                 # 그냥 break 때린다.
                 break
-        my_list[i2] = temp
+        my_list[i] = temp
 
 
 if __name__ == '__main__':
 
-    random_list =[]
+    random_list = []
 
     # input_str = input('정렬할 데이터의 수 : ')
     # input_num = int(input_str)
@@ -51,6 +51,7 @@ if __name__ == '__main__':
 
     for i in range(input_num):
         random_list.append(random.randint(1, input_num))
+    # random_list =[4,3,1,2,6]
 
     print('<정렬 전>')
     print(random_list)
