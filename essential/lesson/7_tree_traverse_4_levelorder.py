@@ -45,18 +45,6 @@ def init_tree():
 #     if node.right:
 #         levelorder_traverse(node.right)
 
-# def levelorder_traverse(node):
-#
-#     if node == root:
-#         print(node.data, end='-> ')
-#
-#     if node.left is None or node.right is None: return
-#     print(node.left.data, end='-> ')
-#     print(node.right.data, end='-> ') if node.right.data != 'G' else print(node.right.data)
-#
-#     levelorder_traverse(node.left)
-#     levelorder_traverse(node.right)
-
 
 def levelorder_traverse(node):
 

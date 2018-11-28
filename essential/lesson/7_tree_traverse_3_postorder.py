@@ -48,7 +48,7 @@ def postorder_traverse(node):
 
     postorder_traverse(node.left)
     postorder_traverse(node.right)
-    print(node.data, end='-> ') if node.data != 'A' else print(node.data)
+    print(node.data, end=' -> ' if node.data != 'A' else '')
 
 
 if __name__ == '__main__':
