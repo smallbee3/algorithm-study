@@ -5,18 +5,18 @@ from helper import my_timer
 
 
 # Book answer
-@my_timer
-def bubble_sort(my_list):
-    for i in range(len(my_list)-1):
-        for j in range(1, len(my_list)-i):
-            if my_list[j-1] > my_list[j]:
-                # temp = my_list[j-1]
-                # my_list[j-1] = my_list[j]
-                # my_list[j] = temp
-                # print(my_list)
-
-                # swap values through tuple
-                my_list[j-1], my_list[j] = my_list[j], my_list[j-1]
+# @my_timer
+# def bubble_sort(my_list):
+#     for i in range(len(my_list)-1):
+#         for j in range(1, len(my_list)-i):
+#             if my_list[j-1] > my_list[j]:
+#                 # temp = my_list[j-1]
+#                 # my_list[j-1] = my_list[j]
+#                 # my_list[j] = temp
+#                 # print(my_list)
+#
+#                 # swap values through tuple
+#                 my_list[j-1], my_list[j] = my_list[j], my_list[j-1]
 
 # Myway
 # @my_timer
@@ -28,6 +28,17 @@ def bubble_sort(my_list):
 #                 my_list[j+1] = my_list[j]
 #                 my_list[j] = temp
 #                 print(my_list)
+
+
+# 2018.11.28
+# '-1' is still a key point of this algorithm
+
+def bubble_sort(arr):
+
+    for num in range(len(arr)-1):
+        for i in range(len(arr) - num - 1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
 
 
 if __name__ == '__main__':
