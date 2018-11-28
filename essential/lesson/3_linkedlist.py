@@ -32,7 +32,6 @@ def print_list():
     print()
 
 
-
 # def insert_list(obj):
 #
 #     # global node_A

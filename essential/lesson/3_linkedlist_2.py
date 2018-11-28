@@ -90,7 +90,7 @@ def print_list():
 
 
 # p.35
-# Book answer cannot pass the case of inserting first node
+# Book answer cannot pass the case of inserting node in the first place
 # and not existing node.
 
 # def insert_list(data):

@@ -43,6 +43,8 @@ def bracket_calculator(exp):
             num1 = operand.pop()
             num2 = operand.pop()
             oper = operator.pop()
+
+            # mistake
             # result = calculation(num1, num2, oper)
             result = calculation(num2, num1, oper)
 
@@ -67,9 +69,9 @@ if __name__ == '__main__':
     # expression = '2+3*4'
     # expression = '1%5'
     expression = '2+3*4+1%5+6*2%6'
-    result = bracket_calculator(list(expression))
+    ret = bracket_calculator(list(expression))
 
-    print(f'{expression} = {result}')
+    print(f'{expression} = {ret}')
 
 
 # def bracket_calculator(exp):
