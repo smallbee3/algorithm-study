@@ -1,23 +1,7 @@
-# sorting이 되어 있지 않기 때문에 binary search를 사용할 수 없다.
-# -> 무슨소리??
-
-# def binary_search(arr, item):
-#     low = 0
-#     high = len(arr) - 1
-#
-#     while low <= high:
-#         mid = (low + high) // 2
-#         guess = arr[mid]
-#
-#         if guess == item:
-#             return mid
-#         elif guess < item:
-#             low = mid + 1
-#         else:
-#             high = mid - 1
 
 
 # min finder 조금 다른 방식으로 품. (hello coding 책 답안과 다름)
+
 def find_min_num(arr):
     if len(arr) == 0:
         pass
@@ -108,6 +92,31 @@ def selection_sort(arr):
             print()
 
     return arr
+
+
+# 2018.11.28
+# The previous code(above) find the min value and find its index using index function
+# But, index function can be also counted as O(n), it is not time efficient code.
+
+def find_the_min(arr):
+    min_value = float('inf')
+    min_idx = None
+    for i in range(len(arr)):
+        if arr[i] < min_value:
+            min_value = arr[i]
+            min_idx = i
+    return min_idx
+
+
+def selection_sort2(arr):
+
+    # miss point 1
+    # for i in range(len(arr)):
+    for i in range(len(arr)-1):
+        # miss point 2
+        # min_idx = find_the_min(arr[i:])
+        min_idx = find_the_min(arr[i:]) + i
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
 
 if __name__ == '__main__':
