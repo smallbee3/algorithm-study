@@ -43,7 +43,7 @@ def bubble_sort(arr):
 
 if __name__ == '__main__':
 
-    random_list =[]
+    random_list = []
 
     # input_str = input('정렬할 데이터의 수 : ')
     # input_num = int(input_str)

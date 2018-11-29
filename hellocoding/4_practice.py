@@ -306,7 +306,7 @@ print(t2)
 # 선택 정렬처럼 답찾는 것과 똑같다..
 
 
-# 내코드
+# My Code
 def find_the_big(arr):
 
     if len(arr) == 0:

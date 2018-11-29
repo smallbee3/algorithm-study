@@ -45,7 +45,11 @@ def breadth_first_algorithm(name):
 
 print(breadth_first_algorithm('you'))
 
+# Key point of Breadth first search
 
+# 1. Using graph dict (append values which are connected nodes)
+#
+# 2. Eradicate duplicate element
 
 
 

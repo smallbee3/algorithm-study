@@ -106,6 +106,7 @@ dijkstra('start', 'final')
 
 # 181126 Result after 1 hour of coding
 # Till now this is my simplest code ever
+# (Above code delete key in graph dict)
 
 def find_the_cheepest_node(costs):
     min_distance = float('inf')
